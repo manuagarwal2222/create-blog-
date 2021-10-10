@@ -5,3 +5,9 @@ from .models import post
 def index(request):
     posts = post.objects.all()
     return render(request, 'index.html',{'posts':posts})
+
+def Post(request, pk):
+    posts = post.objects.get(id=pk)
+    return render(request, 'posts.html',{'posts':posts})
+    
+
